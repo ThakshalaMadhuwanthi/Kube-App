@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        app: kub-app
+        app: kube-app
     spec:
       containers:
         - name: kube-app-container
