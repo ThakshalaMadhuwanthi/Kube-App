@@ -14,7 +14,7 @@ This project demonstrates a simple web application deployed on Kubernetes using 
 ## Tools Used
 
 - Docker
-- Kubernetes (Deployment, Service, ReplicaSet)
+- Kubernetes (Deployment, Service)
 - Nginx
 - Helm
 - kube-prometheus-stack (Prometheus + Grafana)
