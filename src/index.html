@@ -1,31 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>Kube App</title>
+
   <style>
     body {
       font-family: Arial;
       text-align: center;
-      margin-top: 100px;
+      margin-top: 80px;
       background-color: #0f172a;
       color: white;
     }
+
     .box {
       background: #1e293b;
       padding: 30px;
-      width: 300px;
+      width: 320px;
       margin: auto;
       border-radius: 10px;
     }
+
+    button {
+      padding: 10px 15px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn {
+      background: #38bdf8;
+      color: black;
+    }
+
+    .status {
+      margin-top: 10px;
+      font-weight: bold;
+    }
   </style>
 </head>
+
 <body>
 
   <h1>🚀 Kubernetes Demo App</h1>
 
   <div class="box">
-    <p>Simple frontend deployed on Kubernetes</p>
+
+    <p>🐳 Simple interactive frontend</p>
+
+    <!-- Live time -->
+    <p>🕒 Time: <span id="time"></span></p>
+
+    <!-- Counter -->
+    <p>Clicks: <span id="count">0</span></p>
+    <button class="btn" onclick="increase()">Click Me</button>
+
+    <!-- Status toggle -->
+    <p class="status" id="status">🟢 Pod Running</p>
+    <button onclick="toggleStatus()">Toggle Status</button>
+
   </div>
+
+  <script>
+    // Live clock
+    function updateTime() {
+      document.getElementById("time").innerText = new Date().toLocaleTimeString();
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+
+    // Counter
+    let count = 0;
+    function increase() {
+      count++;
+      document.getElementById("count").innerText = count;
+    }
+
+    // Status toggle
+    let running = true;
+    function toggleStatus() {
+      running = !running;
+      document.getElementById("status").innerText =
+        running ? "🟢 Pod Running" : "🔴 Pod Down (demo)";
+    }
+  </script>
 
 </body>
 </html>
