@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata: kube-app-deployment
+metadata: 
+  name: kube-app-deployment
 spec:
   replicas: 1
   selector:
